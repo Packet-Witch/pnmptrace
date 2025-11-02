@@ -7,15 +7,15 @@ A command line utility which reads PNMP-format JSON reports from stdin and outpu
                     User Manual For Version 1.0
 
 
-What is PNMPTRACE?
+### What is PNMPTRACE? ###
 
    PNMPTRACE is a free open-source command line program which converts
    PNMP-format packet traces from JSON to a familiar ASCII "trace"
    format.
 
-What is PNMP?
+### What is PNMP? ###
 
-   PNMP is the Packet Network Monitoring Project. The PNMP server
+   PNMP is the **Packet Network Monitoring Project**. The PNMP server
    receives packet traces and status data from participating XRouter
    and BPQ nodes, for the purposes of network monotoring, analysis,
    fault-finding and planning.
@@ -25,20 +25,20 @@ What is PNMP?
    data from the nodes (aka "reporters").  It is this data, from the
    endpoint at 'node-api.packet.oarc.uk/in/udp' that PNPMTRACE uses.
 
-Requirements
+ ### Requirements ###
 
    GCC to compile the program.
 
    mosquitto_sub (or any other suitable MQTT client). You can install
    this using 'sudo apt install mosquitto-clients'
 
-Notes
+### Notes ###
 
    This document assumes the use of Linux, and the MQTT client
    'mosquitto_sub', but any MQTT client which outputs JSON to stdout
    could be used instead.
 
-How to Compile PNMPTRACE
+### How to Compile PNMPTRACE ###
 
    Put pnmptrace.c into a directory of your choice.
 
@@ -54,7 +54,7 @@ How to Compile PNMPTRACE
 
        sudo mv pnmptrace /bin
 
-How To Use PNMPTRACE
+### How To Use PNMPTRACE ###
 
    Run mosquitto_sub, specifying the host and topic like so:
 
@@ -85,15 +85,13 @@ How To Use PNMPTRACE
    frames, or frames from a particular station, or frames carrying a
    paticular protocol such as IP.
 
-Filters and Display Options
+### Filters and Display Options ###
 
    These are specified as arguments to the program. They cannot (yet)
    be changed on the fly.
 
-   Summary of Options
+   #### Summary of Options ####
 
-   Option            Description
-   -----------------------------------------------------------------
      -3              Don't trace NetRom layer 3 or above
      -4              Don't trace NetRom layer 4 or above
      -a <callsign>   Show ALL frames to or from <callsign>
@@ -122,7 +120,7 @@ Filters and Display Options
    More than one option can be specified, but some combinations are
    pointless.  For example, if -3 is specified -i and -n are redundant.
 
-   Display Options:
+   #### Display Options: ####
 
      -c
         Don't colourise the traces.  By default, traces are coloured
